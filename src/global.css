@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Assim tbm funcionaria */
+/* .button {
+  @apply bg-violet-500 px-4 h-10 rounded text-violet-100;
+} */

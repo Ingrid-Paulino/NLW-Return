@@ -1,0 +1,22 @@
+tailwindcss (https://tailwindcss.com/) -> Ferramenta que contem classes de estilo. traz muita produtividade para o dev.
+
+CONFIGURAÇÃO: https://tailwindcss.com/docs/installation
+  - npm install -D tailwindcss
+  - npx tailwindcss init
+  - colei (content: ["./src/**/*.{html,js}"],) no arquivo gerado(tailwind.config.js)
+    - mudei {html,js} para tsx
+  - criei o arquivo src/global.css e colei:
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+  - npm install -D postcss autoprefixer
+  - npx tailwindcss init -p -> instala outra ferramenta que é o postcss que integra de forma automatica junto com o vite, que basicamente altera de forma altomatica toda vez que tiver alguma mudança no css.
+
+  OU
+
+  https://tailwindcss.com/docs/installation/using-postcss
+  - npm install -D tailwindcss postcss autoprefixer
+  - npx tailwindcss init
+
+
+OBSERVAÇÕES: O tailwind nos sempre utilizamos ele com class e não className.
