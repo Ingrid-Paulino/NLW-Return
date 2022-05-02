@@ -19,4 +19,5 @@ CONFIGURAÇÃO: https://tailwindcss.com/docs/installation
   - npx tailwindcss init
 
 
-OBSERVAÇÕES: O tailwind nos sempre utilizamos ele com class e não className.
+phosphor-icons: https://phosphoricons.com/ ou https://github.com/phosphor-icons/phosphor-home
+  - npm i phosphor-react
