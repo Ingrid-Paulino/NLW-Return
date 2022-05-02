@@ -22,8 +22,6 @@ export function Widget() {
       {/* FORMA 2 */}
       <Popover.Panel>Hello World</Popover.Panel>
     
-      
-
 
     {/* forma 2 */}
        <Popover.Button className="bg-brand-500 rounded-full px-3 h-12 text-white flex items-center group"> 
