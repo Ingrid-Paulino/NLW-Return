@@ -21,3 +21,11 @@ CONFIGURAÇÃO: https://tailwindcss.com/docs/installation
 
 phosphor-icons: https://phosphoricons.com/ ou https://github.com/phosphor-icons/phosphor-home
   - npm i phosphor-react
+
+Bibliotecas de acessibilidade:
+  - https://reakit.io/
+  - https://www.radix-ui.com/docs/primitives/overview/getting-started
+  - https://headlessui.dev/ --> usei essa na aplicação pois ela é integrada com Tailwind
+    1. peguei o Popover
+    2. npm install @headlessui/react
+    3. import
