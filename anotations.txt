@@ -29,3 +29,23 @@ Bibliotecas de acessibilidade:
     1. peguei o Popover
     2. npm install @headlessui/react
     3. import
+
+
+
+O tailwindcss ele tem por padrao com alguns plugns e vou usar o de formularios:
+  - https://github.com/tailwindlabs/tailwindcss-forms -> tem o ingicador disso na rolagem da pagina  https://tailwindcss.com/docs/installation/using-postcss
+
+     - npm install -D @tailwindcss/forms  ---> OBS: para coisas de formulario funcionar, é necessario esse plugin.
+     - dentro do arquivo tailwindlabs coloque essa linha:
+       - require('@tailwindcss/forms'),
+
+
+tailwind-scrollbar: pacote no npm que tras algumas estilizaçoes prontas de scrol
+  - https://www.npmjs.com/package/tailwind-scrollbar
+    - npm install --save-dev tailwind-scrollbar
+     - dentro do arquivo tailwindlabs coloque essa linha:
+            - require('tailwind-scrollbar'),
+
+
+Biblioteca que tira foto da tela:
+  - npm i html2canvas
