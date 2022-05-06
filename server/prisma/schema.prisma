@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//aqui é onde eu indico qual banco usar
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// sintaxe do prisma -- aqui agr declaro as tabelas, colunas, indices (única)...
+
+//cria tabela no bd chamada de Feedback
+model Feedback {
+  //colunas --> obs: o primas converte oscampos para outros tipos de forma mais detalhada por baixo dos panos. ex: type transforma p/ VarChar ou text ou outro
+  // id Int @id @default(autoincrement()) //@id indica a primarykey
+  //ou
+  id String @id @default(uuid()) //@id indica a primarykey uuid -> gera ids unicos de forma mais trabalhada, é uma boa pratica
+
+  type       String
+  // type @db.VarChar(200) --> modo se eu quiser trabalhar com um tipo especifico
+  comment    String
+  screenshot String? // ? === campo n obrigatorio
+  //cria a tabela com o nome no plural e para letra minuscula
+  @@map("feedbacks")
+}
