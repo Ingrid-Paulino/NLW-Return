@@ -1,3 +1,11 @@
+Cria projeto com vite:
+  - npm i create vite@latest --> ultima versão
+    - poe nome do projeto, react (Vanilla seria o js padrao, sem freme e biblioteca), react-ts
+  -npm vite 
+  -npm run vite 
+  -npm run dev
+
+
 tailwindcss (https://tailwindcss.com/) -> Ferramenta que contem classes de estilo. traz muita produtividade para o dev.
 
 CONFIGURAÇÃO: https://tailwindcss.com/docs/installation
@@ -49,3 +57,123 @@ tailwind-scrollbar: pacote no npm que tras algumas estilizaçoes prontas de scro
 
 Biblioteca que tira foto da tela:
   - npm i html2canvas
+
+
+
+
+Back-end:
+   na pasta service rodei 1°:
+     - npm init -y
+  - dependencias instaladas:
+     - npm i typescript @types/node ts-node-dev -D
+     - npx tsc --init //cria o arquivo tsconfig.json
+       - nesse arquivo mudei a versão do target para 2020
+       - descomentei o rootDir e o outDir e coloquei o diretorio src no root e dist no out
+     - npm i express // lida com rotas na aplicação
+       - npm i @types/express 
+
+    - Enquanto o projeto eta em desenvolvimento vamos usar o banco de dados SQLite:
+      pq: 
+        1°: ele não precisa instalar nada na minha maquina
+        2°: vamos usar o Prisma. o prisma é um ORM, uma ferramenta que facilita a gente a trabalhar com operaçoes do banco de dados. Ele muda a forma que comunicamos com o banco de dados. Ao inves de a gente escrever querys sql tradicionais como select insert delete update, nos escrevemos codigo js.  (No final o prisma é convertido para o sql tradicional)  ---> O prisma estara fazendo o meio campo e trabalhando com sqlite no futuro eu consigo mudar de forma facil sem ter que alterar nada, fazer a mudança de banco de dados ex: Mysql, MongoDB, PostgreSQL, SQLite, SQL Server
+
+    - instala o prisma: 
+      - npm i prisma -D
+      - npm i @prisma/client
+      - npx prisma init //cria a pastinha prisma, o arquivo .env e o .gitignore
+
+      - instalei a extensão do prisma:
+       - ctrl shift p -> open setting json
+         - coloquei essa configuração de formatação de quando eu salvo os arquivos do prisma, dentro do arquivo setting.json
+              "[prisma]": {
+                  "editor.formatOnSave" : true
+               },
+
+      - npx prisma migrate dev //cria a tabela/migration no banco.  dev(sig. ambiente de desenvolvimento)
+      - //npx prisma migrate deploy //cria a tabela no banco.  deploy(sig. ambiente de produção)
+      
+      - npx prisma studio // abre no navegador uma interface para navegação das tabelas no bd. O legal disso é que não preciso instalar nenhuma ferramenta para visualizar o banco
+
+
+      - biblioteca de envio de email (nodemailer)
+        - npm i nodemailer
+        - npm i @types/nodemailer -D
+        
+
+    - Para enviarmos email na aplicação é necessario um serviço de envio de emails:
+      - podemos usar um serviço externo ou por um email existente:
+        ex: smtp gmail eu consigo enviar email  atraves da minha conta do gmail, mas a maioria das vezes tem alguns limites, entt nn é muito legal.
+
+        Mas existem serviçoes especializados em envio de email:
+          ex: mailgun, sparkPost, MailChimp...
+        
+        Para o ambiente de desenvolvimento não usamos de cima e sim o Mailtrap que é para a gente testar envios de email: https://mailtrap.io/
+          - obs: tem que criar uma conta, mas é gratuito
+          - depois cria o nome do serviço e configura a Integrations para nodemailer para pegar o pedaço de codigo gerado que coloquei no arquivo src/nodemailer/nodemailerMailAdaoter
+
+      
+
+      Testes: 
+      - instala o jest:
+        - npm i jest -D
+        -npm i @types/jest -D
+        - npx jest --init
+          - yes, yes, node, yes, v8, yes
+        - npm i ts-node -D
+
+        Vou usar o swc/jest para o jest funcionar com typescript: https://swc.rs/docs/usage/jest
+        - npm i -D jest @swc/jest
+        - dentro do arquivo jest.config.ts eu descomentei transform:undefined e colei:
+                  transform: {
+          "^.+\\.(t|j)sx?$": ["@swc/jest"],
+        },
+
+
+
+  Cors: é uma forma de fazermos um controle de segurança no nosso back end pra q nos nn permita q front ends inadequados acessem informaçoes do nosso back end. com ele conseguimos passar quais endereços de aplicaçoes front end podem sonsumir/acessar nosso back end.
+    -npm i cors 
+    -npm i @types/cors -D 
+
+
+
+
+
+Versãp Mobile:::
+  Feramentas:
+    - React Native
+    - expo
+
+    1° passo a passo de como instalar o expo: https://efficient-sloth-d85.notion.site/Instalando-Expo-cc5bfac8f19a41e394889e885355f261
+
+    Depois de instalado eu tenho acesso no terminal do comando expo: 
+      iniciando projeto:
+        - expo init mobile
+          -blank (typescript) -> projeto em branco
+        - expo start --> executa a aplicação, esse é o momento que da para abrir no celular
+
+
+        vamos usar o expo google fonts: https://docs.expo.dev/guides/using-custom-fonts/
+        - expo install expo-font @expo-google-fonts/inter
+        - expo i expo-app-loading --> verifica se a aplicação esta rodando
+
+        Para icones: https://www.npmjs.com/package/phosphor-react-native
+          - npm i phosphor-react-native
+
+        Biblioteca para reconhecer as imagens usadas em svg:
+          - npm i react-native-svg
+
+
+          - npm i react-native-iphone-x-helper
+
+
+          Para o menu:
+            https://github.com/gorhom/react-native-bottom-sheet https://gorhom.github.io/react-native-bottom-sheet/
+              - npm i @gorhom/bottom-sheet@^4
+              - npm i react-native-reanimated react-native-gesture-handler vou usar com o expo(https://docs.expo.dev/versions/latest/sdk/reanimated/)
+                - expo install react-native-reanimated
+            
+
+            https://docs.expo.dev/versions/latest/sdk/gesture-handler/
+              - expo install react-native-gesture-handler 
+
+              ----DESISTI DE FAZER A VERSÂO Mobile.

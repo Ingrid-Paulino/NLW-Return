@@ -13,6 +13,7 @@ Um Component Widget para feedback que pode ser utilizado em qualquer site.
 - NodeJS
 - React native
 - Expo
+- exprees
 - VS Code
 
 [Layout do Projeto](https://www.figma.com/community/file/1102912516166573468,  "Layout do Projeto")
