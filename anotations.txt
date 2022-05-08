@@ -193,3 +193,10 @@ Versãp Mobile:::
 
                 npm run dev -> roda o meu src/server.ts
                 npm run start -> roda o meu dist/src/server.js
+
+                para o deploy do back-end usei Railway.app: https://railway.app/
+                1°: fiz deploy do banco de dados: Provisionar PostgreSQL -> ele cria um banco postgresql de forma automatica
+                2° fui em new/novo, efui em github repo: e escrevi o nome do meu repositorio 
+                3°: fui em setting no repositorio do nlw.. e fiz configuraçoes.
+
+                4°: Em variables configurei a variavel de ambiente do meu banco de dados. OBS: no value da variavel, coloco o connection URL do meu postgreSQL criado.
