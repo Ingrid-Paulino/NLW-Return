@@ -199,4 +199,6 @@ Versãp Mobile:::
                 2° fui em new/novo, efui em github repo: e escrevi o nome do meu repositorio 
                 3°: fui em setting no repositorio do nlw.. e fiz configuraçoes.
 
-                4°: Em variables configurei a variavel de ambiente do meu banco de dados. OBS: no value da variavel, coloco o connection URL do meu postgreSQL criado.
+                4°: Em variables configurei a variavel de ambiente do meu banco de dados. OBS: no value da variavel, coloco o connection URL do meu postgreSQL criado. Com isso obs: toda vez que eu fizer commit sera atualizado o meu back no Railway
+
+                5°: deu problema la no Railway pois a minha pasta migration foi construida no banco sqlite, ent esclui a pasta migration e criei de novo : npx prisma migrate dev
