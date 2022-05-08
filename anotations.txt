@@ -177,3 +177,19 @@ Versãp Mobile:::
               - expo install react-native-gesture-handler 
 
               ----DESISTI DE FAZER A VERSÂO Mobile.
+
+
+
+              Junção do back e front
+                -npm i axios  --> na pasta web
+
+              para rodar o npx prisma studio, tem que esta rodando o npm run dev, consigo ver os emails enviados no mailtrap https://mailtrap.io/inboxes/1726975/messages/2764966720
+
+
+              Deploy:
+              ferramenta Vercel: https://vercel.com/
+                1° fiz o deploy da pasta web
+                2° fiz o deploy do server(backend), mas antes alterei na pasta prisma no schema o provider que estava sqlite para postgresql. Dica sempre use o mesmo tipo de banco para ambiente de desenvolvimento e produção. e precisei mudar o .env tbm. depois rodei o npx tsc para que fosse gerado a pasta dist e adicionei ela no gitignore pois ela não pode ir para produção. deletei o primeiro arquivo jest.config, pois ele doi compilado para javascript.  e no arquivo tsconfig adicionei na penultima linha ---> "include":["src"] // para ele incluir apenas os arquivos que estão pa pasta src em javascript. e adicionei esse script "build": "npx tsc", e o "start": "node dist/server.js"(ele executa o meu servidor apartir da pasta dist), no package.json. e depois rodo npm run start
+
+                npm run dev -> roda o meu src/server.ts
+                npm run start -> roda o meu dist/src/server.js
